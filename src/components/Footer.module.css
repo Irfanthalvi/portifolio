@@ -1,0 +1,453 @@
+/* ==========================================
+   FOOTER — Premium Redesign
+   ========================================== */
+
+.footer {
+  background: #060a11;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background radial */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(0, 238, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ==========================================
+   CTA Banner
+   ========================================== */
+
+.ctaBanner {
+  border-top: 1px solid rgba(0, 238, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 238, 255, 0.05) 0%,
+    rgba(0, 102, 255, 0.04) 100%
+  );
+  padding: var(--space-12) var(--space-6);
+}
+
+.ctaInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  flex: 1;
+  min-width: 260px;
+}
+
+.ctaTitle {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+}
+
+.ctaHighlight {
+  color: #00eeff;
+  text-shadow: 0 0 20px rgba(0, 238, 255, 0.4);
+}
+
+.ctaSubtitle {
+  font-size: var(--text-sm);
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #00eeff 0%, #38bdf8 100%);
+  color: #060a11;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 24px rgba(0, 238, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 238, 255, 0.5);
+}
+
+/* ==========================================
+   Main Footer Grid
+   ========================================== */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6) var(--space-8);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.6fr;
+  gap: var(--space-10);
+}
+
+/* ==========================================
+   Brand Column
+   ========================================== */
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.logo {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+
+.logoDot {
+  color: #00eeff;
+  text-shadow: 0 0 12px #00eeff;
+}
+
+.brandDesc {
+  font-size: var(--text-sm);
+  color: #94a3b8;
+  line-height: 1.75;
+  max-width: 300px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.contactIcon {
+  color: #00eeff;
+  flex-shrink: 0;
+}
+
+/* Tech chips */
+.techChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-1);
+}
+
+.techChip {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.techChip:hover {
+  color: #00eeff;
+  border-color: rgba(0, 238, 255, 0.35);
+  background: rgba(0, 238, 255, 0.06);
+}
+
+/* ==========================================
+   Nav Link Columns
+   ========================================== */
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.colTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00eeff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-5);
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: var(--text-sm);
+  color: #94a3b8;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.linkArrow {
+  color: #00eeff;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.navLink:hover .linkArrow {
+  transform: translateX(2px);
+}
+
+/* ==========================================
+   Social Column
+   ========================================== */
+
+.socialCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socialRow:hover {
+  background: rgba(0, 238, 255, 0.07);
+  border-color: rgba(0, 238, 255, 0.3);
+  transform: translateX(4px);
+}
+
+.socialIconWrap {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 238, 255, 0.1);
+  color: #00eeff;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.socialRow:hover .socialIconWrap {
+  background: #00eeff;
+  color: #060a11;
+  box-shadow: 0 0 12px rgba(0, 238, 255, 0.4);
+}
+
+.socialMeta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.socialLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.socialHandle {
+  font-size: 0.68rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.socialArrow {
+  color: #334155;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.socialRow:hover .socialArrow {
+  color: #00eeff;
+}
+
+/* ==========================================
+   Divider
+   ========================================== */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 238, 255, 0.2) 30%,
+    rgba(0, 238, 255, 0.2) 70%,
+    transparent 100%
+  );
+  margin: var(--space-10) 0 var(--space-6);
+}
+
+/* ==========================================
+   Bottom Bar
+   ========================================== */
+
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.copyright {
+  font-size: var(--text-sm);
+  color: #475569;
+}
+
+.copyrightName {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.madeWith {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  color: #475569;
+}
+
+.heartIcon {
+  color: #f43f5e;
+  filter: drop-shadow(0 0 4px rgba(244, 63, 94, 0.5));
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+
+.codeIcon {
+  color: #00eeff;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.backToTop {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00eeff;
+  background: rgba(0, 238, 255, 0.08);
+  border: 1px solid rgba(0, 238, 255, 0.25);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.backToTop:hover {
+  background: #00eeff;
+  color: #060a11;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .socialCol {
+    grid-column: 1 / -1;
+  }
+
+  .socialList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .socialRow {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+
+  .ctaInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-5);
+  }
+
+  .ctaBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

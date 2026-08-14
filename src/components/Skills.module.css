@@ -1,0 +1,328 @@
+.section {
+  padding: var(--section-padding);
+  background: radial-gradient(circle at 50% 20%, rgba(0, 238, 255, 0.04) 0%, transparent 60%),
+              #080c14;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Category Filter Bar */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: var(--space-8) auto var(--space-10);
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+}
+
+.filterBtn:hover {
+  color: #ffffff;
+  border-color: rgba(0, 238, 255, 0.4);
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-2px);
+}
+
+.activeFilter {
+  color: #080c14 !important;
+  background: linear-gradient(135deg, #00eeff 0%, #38bdf8 100%) !important;
+  border-color: #00eeff !important;
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.tabBadge {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  font-weight: 700;
+}
+
+.activeFilter .tabBadge {
+  background: rgba(8, 12, 20, 0.25);
+  color: #080c14;
+}
+
+/* Skills Grid */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-16);
+}
+
+/* Skill Card */
+.skillCard {
+  position: relative;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.7) 0%, rgba(8, 14, 26, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 238, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 238, 255, 0.12),
+              0 0 15px rgba(0, 238, 255, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.skillTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.categoryBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.categoryIcon {
+  color: #00eeff;
+}
+
+.categoryBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+}
+
+.skillName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+/* Level Badges */
+.levelBadge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.levelExpert {
+  color: #00eeff;
+  background: rgba(0, 238, 255, 0.1);
+  border: 1px solid rgba(0, 238, 255, 0.3);
+}
+
+.levelAdvanced {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.levelProficient {
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+/* Progress Area */
+.progressArea {
+  margin-bottom: var(--space-4);
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.proficiencyLabel {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.percentText {
+  color: #00eeff;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #0099ff, #00eeff);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tags List */
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tag {
+  font-size: 0.72rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Engineering Highlights Bento */
+.bentoSection {
+  margin-top: var(--space-8);
+  padding-top: var(--space-10);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bentoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-8);
+}
+
+.bentoSparkle {
+  color: #00eeff;
+}
+
+.bentoTitle {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.bentoCard {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.6) 0%, rgba(8, 12, 22, 0.7) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bentoCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 238, 255, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 238, 255, 0.1);
+}
+
+.bentoIconWrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 238, 255, 0.15) 0%, rgba(0, 102, 255, 0.08) 100%);
+  color: #00eeff;
+  border: 1px solid rgba(0, 238, 255, 0.2);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
+}
+
+.bentoCardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: var(--space-2);
+  line-height: 1.35;
+}
+
+.bentoCardDesc {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterBar {
+    gap: var(--space-2);
+  }
+
+  .filterBtn {
+    padding: 8px 14px;
+    font-size: var(--text-xs);
+  }
+}
+
