@@ -35,7 +35,7 @@ const educationData: EducationItem[] = [
   {
     id: 'fsc',
     degree: 'FSc — Pre-Engineering (Part I & II)',
-    institution: 'Federal Government College',
+    institution: 'Islamabad Model College',
     board: 'Federal Board of Intermediate Education (FBISE), Islamabad',
     period: '2020 – 2022',
     location: 'Islamabad, Pakistan',
@@ -46,8 +46,8 @@ const educationData: EducationItem[] = [
     achievements: [
       { icon: Trophy, text: '1st Position — FSc Part I (11th Grade), FBISE Islamabad' },
       { icon: Trophy, text: '1st Position — FSc Part II (12th Grade), FBISE Islamabad' },
-      { icon: Star,   text: 'Merit Certificate for Academic Excellence — Federal Govt College' },
-      { icon: Medal,  text: 'Certificate of Achievement — Top Performer of the Batch' },
+      { icon: Star, text: 'Merit Certificate for Academic Excellence — Federal Govt College' },
+      { icon: Medal, text: 'Certificate of Achievement — Top Performer of the Batch' },
     ],
     certificates: [
       'FBISE Merit Certificate — Part I',
@@ -68,10 +68,10 @@ const educationData: EducationItem[] = [
     description:
       "Currently pursuing a 4-year Bachelor's in Software Engineering, focusing on web technologies, software architecture, data structures, and full-stack development.",
     achievements: [
-      { icon: BookOpen,    text: 'Core focus on Software Engineering & Modern Web Technologies' },
+      { icon: BookOpen, text: 'Core focus on Software Engineering & Modern Web Technologies' },
       { icon: CheckCircle2, text: 'Applying academic knowledge in real production projects simultaneously' },
-      { icon: Star,        text: '2+ years of professional frontend experience running alongside studies' },
-      { icon: Award,       text: 'Consistent performance combining industry work with university coursework' },
+      { icon: Star, text: '2+ years of professional frontend experience running alongside studies' },
+      { icon: Award, text: 'Consistent performance combining industry work with university coursework' },
     ],
     certificates: [
       'Enrolled — BS Software Engineering',
@@ -108,11 +108,10 @@ export default function Education() {
                   <div className={styles.titleRow}>
                     <h3 className={styles.degree}>{edu.degree}</h3>
                     <span
-                      className={`${styles.statusBadge} ${
-                        edu.statusClass === 'completed'
+                      className={`${styles.statusBadge} ${edu.statusClass === 'completed'
                           ? styles.badgeCompleted
                           : styles.badgeOngoing
-                      }`}
+                        }`}
                     >
                       <span className={styles.pulseDot} />
                       {edu.status}
