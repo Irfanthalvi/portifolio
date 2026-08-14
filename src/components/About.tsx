@@ -1,82 +1,122 @@
 import { Code, Layers, Zap, Cpu } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import styles from './About.module.css';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
+const skills = [
+  'React.js',
+  'Next.js',
+  'TypeScript',
+  'Tailwind CSS',
+  'shadcn/ui',
+  'Material UI',
+  'Redux Toolkit',
+  'React Query',
+  'Firebase',
+  'Supabase',
+  'Three.js',
+  'GSAP',
+  'Lenis',
+];
+
+const highlights = [
+  {
+    icon: Code,
+    title: 'LMS & Enterprise Platforms',
+    desc: 'Built multiple LMS applications with dashboards, user flows, and Firebase/Supabase authentication.',
+  },
+  {
+    icon: Zap,
+    title: '3D & Interactive Animations',
+    desc: 'Implemented advanced UI interactions using Three.js, GSAP, and Lenis for smooth scroll web experiences.',
+  },
+  {
+    icon: Layers,
+    title: 'eCommerce & Security',
+    desc: 'Product selling platforms with secure auth and admin-controlled OTP verification workflows.',
+  },
+  {
+    icon: Cpu,
+    title: 'Scalable Frontend Architecture',
+    desc: 'Maintainable React/Next.js/TypeScript codebases with performance optimization and clean component trees.',
+  },
+];
 
 export default function About() {
   return (
-    <section id="about" className={styles.section}>
-      <div className={styles.container}>
+    <section id="about" className="py-20 bg-[#080c14] relative">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="About Me"
           title="Building Scalable"
           highlight="Frontend Solutions"
           subtitle="Experienced Frontend Developer creating modern LMS platforms, eCommerce solutions, and interactive web experiences."
         />
-        <div className={styles.grid}>
-          <div className={styles.text}>
-            <p className={styles.intro}>
-              I&apos;m <strong>Irfan Ali</strong>, a Frontend Developer with <strong>3+ years of experience</strong> building modern, scalable, and production-ready web applications using <strong>React.js</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>.
+
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left: Bio & Tech Chips */}
+          <div className="flex flex-col gap-5 text-left">
+            <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
+              I&apos;m <strong className="text-[#00eeff] font-bold">Irfan Ali</strong>, a Frontend Developer with{' '}
+              <strong className="text-[#00eeff] font-bold">3+ years of experience</strong> building modern, scalable, and
+              production-ready web applications using <strong className="text-[#00eeff] font-bold">React.js</strong>,{' '}
+              <strong className="text-[#00eeff] font-bold">Next.js</strong>, and{' '}
+              <strong className="text-[#00eeff] font-bold">TypeScript</strong>.
             </p>
-            <p className={styles.detail}>
-              My experience spans developing full LMS platforms, product selling/eCommerce solutions, SaaS dashboards, and 3D interactive web experiences. I leverage UI systems like <strong>Tailwind CSS</strong>, <strong>Material UI</strong>, and <strong>shadcn/ui</strong>, with state management via <strong>Redux Toolkit</strong>, <strong>Context API</strong>, and <strong>React Query</strong>.
+
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              My experience spans developing full LMS platforms, product selling/eCommerce solutions, SaaS dashboards, and
+              3D interactive web experiences. I leverage UI systems like <strong className="text-foreground">Tailwind CSS</strong>,{' '}
+              <strong className="text-foreground">shadcn/ui</strong>, and <strong className="text-foreground">Material UI</strong>,
+              with state management via <strong className="text-foreground">Redux Toolkit</strong>,{' '}
+              <strong className="text-foreground">Context API</strong>, and <strong className="text-foreground">React Query</strong>.
             </p>
-            <p className={styles.detail}>
-              I specialize in advanced UI interactions using <strong>Three.js</strong>, <strong>GSAP</strong>, and <strong>Lenis</strong> for smooth animations. I integrate backend services with <strong>Firebase</strong>, <strong>Supabase</strong>, and REST APIs, implementing secure authentication workflows including admin-controlled OTP verification.
+
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+              I specialize in advanced UI interactions using <strong className="text-foreground">Three.js</strong>,{' '}
+              <strong className="text-foreground">GSAP</strong>, and <strong className="text-foreground">Lenis</strong> for
+              smooth animations. I integrate backend services with <strong className="text-foreground">Firebase</strong>,{' '}
+              <strong className="text-foreground">Supabase</strong>, and REST APIs, implementing secure authentication workflows
+              including admin-controlled OTP verification.
             </p>
-            <div className={styles.badgeGroup}>
-              <span className={styles.techChip}>React.js</span>
-              <span className={styles.techChip}>Next.js</span>
-              <span className={styles.techChip}>TypeScript</span>
-              <span className={styles.techChip}>Tailwind CSS</span>
-              <span className={styles.techChip}>shadcn/ui</span>
-              <span className={styles.techChip}>Material UI</span>
-              <span className={styles.techChip}>Redux Toolkit</span>
-              <span className={styles.techChip}>React Query</span>
-              <span className={styles.techChip}>Firebase</span>
-              <span className={styles.techChip}>Supabase</span>
-              <span className={styles.techChip}>Three.js</span>
-              <span className={styles.techChip}>GSAP</span>
-              <span className={styles.techChip}>Lenis</span>
+
+            {/* Tech Badges */}
+            <div className="mt-2 flex flex-wrap gap-2">
+              {skills.map((tech) => (
+                <Badge
+                  key={tech}
+                  variant="cyan"
+                  className="px-3.5 py-1 text-xs font-semibold rounded-full hover:scale-105 transition-transform"
+                >
+                  {tech}
+                </Badge>
+              ))}
             </div>
           </div>
 
-          <div className={styles.highlights}>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Code size={22} />
-              </div>
-              <h3 className={styles.cardTitle}>LMS &amp; Enterprise Platforms</h3>
-              <p className={styles.cardDesc}>
-                Built multiple LMS applications with dashboards, user flows, and Firebase/Supabase authentication.
-              </p>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Zap size={22} />
-              </div>
-              <h3 className={styles.cardTitle}>3D &amp; Interactive Animations</h3>
-              <p className={styles.cardDesc}>
-                Implemented advanced UI interactions using Three.js, GSAP, and Lenis for smooth scroll web experiences.
-              </p>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Layers size={22} />
-              </div>
-              <h3 className={styles.cardTitle}>eCommerce &amp; Security</h3>
-              <p className={styles.cardDesc}>
-                Product selling platforms with secure auth and admin-controlled OTP verification workflows.
-              </p>
-            </div>
-            <div className={styles.card}>
-              <div className={styles.cardIcon}>
-                <Cpu size={22} />
-              </div>
-              <h3 className={styles.cardTitle}>Scalable Frontend Architecture</h3>
-              <p className={styles.cardDesc}>
-                Maintainable React/Next.js/TypeScript codebases with performance optimization and clean component trees.
-              </p>
-            </div>
+          {/* Right: Highlights Bento Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {highlights.map((item) => {
+              const IconComp = item.icon;
+              return (
+                <Card
+                  key={item.title}
+                  className="border-border/60 bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10"
+                >
+                  <CardHeader className="p-6">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff]">
+                      <IconComp size={22} />
+                    </div>
+                    <CardTitle className="text-base font-bold text-foreground mb-2">
+                      {item.title}
+                    </CardTitle>
+                    <CardDescription className="text-xs text-muted-foreground leading-relaxed">
+                      {item.desc}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

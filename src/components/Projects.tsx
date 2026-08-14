@@ -1,6 +1,8 @@
 import { ExternalLink, Layers, Code, ShieldCheck, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import styles from './Projects.module.css';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface Project {
   title: string;
@@ -78,8 +80,8 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className={styles.section}>
-      <div className={styles.container}>
+    <section id="projects" className="py-20 bg-[#080c14] relative">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Featured Work"
           title="Production"
@@ -87,50 +89,80 @@ export default function Projects() {
           subtitle="Real-world LMS platforms, eCommerce systems, and interactive web applications from my resume."
         />
 
-        <div className={styles.grid}>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div key={project.title} className={styles.card}>
-              <div className={styles.cardHeader}>
-                <div className={styles.iconWrap}>{project.icon}</div>
+            <Card
+              key={project.title}
+              className="flex flex-col border-border/80 bg-card/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10"
+            >
+              {/* Header */}
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] shrink-0 shadow-[0_0_12px_rgba(0,238,255,0.2)]">
+                  {project.icon}
+                </div>
                 <div>
-                  <span className={styles.categoryBadge}>{project.category}</span>
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
+                  <Badge variant="cyan" className="mb-1 text-[10px] font-bold tracking-wider uppercase">
+                    {project.category}
+                  </Badge>
+                  <h3 className="text-lg sm:text-xl font-extrabold text-foreground leading-snug">
+                    {project.title}
+                  </h3>
                 </div>
               </div>
 
-              <p className={styles.cardDesc}>{project.description}</p>
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+                {project.description}
+              </p>
 
-              <div className={styles.highlightsBox}>
-                <h4 className={styles.highlightsTitle}>Key Features &amp; Architecture:</h4>
-                <ul className={styles.highlightList}>
+              {/* Highlights Box */}
+              <div className="mb-6 flex-1 rounded-xl border border-border/50 bg-background/50 p-4 sm:p-5">
+                <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-3">
+                  Key Features &amp; Architecture:
+                </h4>
+                <ul className="flex flex-col gap-2">
                   {project.highlights.map((item) => (
-                    <li key={item} className={styles.highlightItem}>
+                    <li
+                      key={item}
+                      className="relative pl-4 text-xs sm:text-sm text-foreground/85 leading-relaxed before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-[#00eeff] before:shadow-[0_0_6px_#00eeff]"
+                    >
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className={styles.cardFooter}>
-                <div className={styles.techTags}>
+              {/* Footer */}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-border/60 pt-4 mt-auto">
+                <div className="flex flex-wrap gap-1.5">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className={styles.tag}>
+                    <Badge
+                      key={tech}
+                      variant="tech"
+                      className="text-[11px] font-medium"
+                    >
                       {tech}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
 
-                <a
-                  href={project.projectUrl}
-                  className={styles.projectBtn}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  asChild
+                  variant="glow"
+                  size="sm"
+                  className="rounded-full px-4 py-1.5 text-xs font-bold shrink-0"
                 >
-                  <span>{project.linkLabel}</span>
-                  <ExternalLink size={16} />
-                </a>
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>{project.linkLabel}</span>
+                    <ExternalLink size={14} className="ml-1" />
+                  </a>
+                </Button>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

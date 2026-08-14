@@ -1,6 +1,5 @@
 import { Search, PenTool, Code, Rocket } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import styles from './Process.module.css';
 
 interface Step {
   icon: React.ReactNode;
@@ -42,23 +41,37 @@ const steps: Step[] = [
 
 export default function Process() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
+    <section className="py-20 bg-[#060a11] relative">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="How I Work"
           title="Development"
           highlight="Process"
           subtitle="A structured approach to delivering quality frontend solutions."
         />
-        <div className={styles.grid}>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div key={step.number} className={styles.step}>
-              <div className={styles.stepNumber}>{step.number}</div>
-              <div className={styles.stepIcon}>{step.icon}</div>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.stepDesc}>{step.description}</p>
+            <div
+              key={step.number}
+              className="relative flex flex-col items-center text-center p-6 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-1"
+            >
+              <div className="mb-3 text-xs font-black tracking-widest text-[#00eeff] uppercase">
+                {step.number}
+              </div>
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] shadow-[0_0_12px_rgba(0,238,255,0.2)]">
+                {step.icon}
+              </div>
+              <h3 className="mb-2 text-base font-bold text-foreground">
+                {step.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {step.description}
+              </p>
               {index < steps.length - 1 && (
-                <div className={styles.connector} aria-hidden="true" />
+                <div
+                  className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[2px] bg-gradient-to-r from-cyan-500/60 to-transparent -translate-y-1/2"
+                  aria-hidden="true"
+                />
               )}
             </div>
           ))}

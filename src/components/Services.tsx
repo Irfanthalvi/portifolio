@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { FigmaIcon } from './Icons';
 import SectionHeader from './SectionHeader';
-import styles from './Services.module.css';
+import { Card } from '@/components/ui/card';
 
 interface Service {
   icon: React.ReactNode;
@@ -84,21 +84,30 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section id="services" className={styles.section}>
-      <div className={styles.container}>
+    <section id="services" className="py-20 bg-[#080c14] relative">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="What I Do"
           title="My"
           highlight="Services"
           subtitle="Frontend development services tailored for startups, businesses, and SaaS products."
         />
-        <div className={styles.grid}>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <div key={service.title} className={styles.card}>
-              <div className={styles.iconWrap}>{service.icon}</div>
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardDesc}>{service.description}</p>
-            </div>
+            <Card
+              key={service.title}
+              className="group border-border/80 bg-card/60 p-6 rounded-2xl backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10"
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] shadow-[0_0_10px_rgba(0,238,255,0.2)] transition-transform duration-300 group-hover:scale-105">
+                {service.icon}
+              </div>
+              <h3 className="mb-2 text-base font-bold text-foreground group-hover:text-[#00eeff] transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                {service.description}
+              </p>
+            </Card>
           ))}
         </div>
       </div>

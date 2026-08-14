@@ -1,3 +1,31 @@
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   shadcn/ui Semantic Theme Variables
+   ============================================ */
+@layer base {
+  :root {
+    /* shadcn/ui dark theme (portfolio is dark-only) */
+    --background: 220 30% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 30% 5%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 185 100% 50%;
+    --accent-foreground: 220 30% 5%;
+    --border: 217 33% 17%;
+    --ring: 185 100% 50%;
+  }
+}
+
 /* ============================================
    DESIGN SYSTEM — Irfan Ali Portfolio
    ============================================ */

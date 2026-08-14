@@ -1,47 +1,36 @@
-import { Mail, ArrowUp, MapPin, Phone, ExternalLink, Code2, Heart } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
 import { GithubIcon, WhatsappIcon, LinkedinIcon } from './Icons';
-import styles from './Footer.module.css';
 
 const navLinks = [
-  { href: '#about',      label: 'About Me' },
-  { href: '#skills',     label: 'Skills' },
+  { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
-  { href: '#projects',   label: 'Projects' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#services', label: 'Services' },
+  { href: '#education', label: 'Education' },
+  { href: '#contact', label: 'Contact' },
 ];
-
-const moreLinks = [
-  { href: '#freelance',  label: 'Freelance' },
-  { href: '#services',   label: 'Services' },
-  { href: '#education',  label: 'Education' },
-  { href: '#contact',    label: 'Contact' },
-];
-
-const techStack = ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Three.js', 'Supabase'];
 
 const socialLinks = [
   {
     href: 'mailto:irfanthalvi@gmail.com',
     icon: Mail,
     label: 'Email',
-    handle: 'irfanthalvi@gmail.com',
   },
   {
     href: 'https://www.linkedin.com/in/irfan-ali-66205a2b3',
     icon: LinkedinIcon,
     label: 'LinkedIn',
-    handle: 'linkedin.com/in/irfan-ali',
   },
   {
     href: 'https://github.com/Irfanthalvi',
     icon: GithubIcon,
     label: 'GitHub',
-    handle: 'github.com/Irfanthalvi',
   },
   {
     href: 'https://wa.me/923337484980?text=Hi%20I%20want%20to%20connect%20with%20you',
     icon: WhatsappIcon,
     label: 'WhatsApp',
-    handle: '+92 333 748 4980',
   },
 ];
 
@@ -49,89 +38,41 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      {/* Top CTA Banner */}
-      <div className={styles.ctaBanner}>
-        <div className={styles.ctaInner}>
-          <div className={styles.ctaText}>
-            <h2 className={styles.ctaTitle}>
-              Ready to build something <span className={styles.ctaHighlight}>exceptional?</span>
-            </h2>
-            <p className={styles.ctaSubtitle}>
-              Let&apos;s collaborate and bring your ideas to life with modern, scalable web solutions.
-            </p>
-          </div>
-          <a href="#contact" className={styles.ctaBtn}>
-            Get In Touch
-            <ExternalLink size={16} />
-          </a>
-        </div>
-      </div>
-
-      {/* Main Footer Body */}
-      <div className={styles.container}>
-        <div className={styles.grid}>
-
-          {/* Brand Column */}
-          <div className={styles.brandCol}>
-            <a href="#home" className={styles.logo}>
-              Irfan<span className={styles.logoDot}>.</span>
+    <footer className="w-full border-t border-border/60 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto max-w-6xl px-6 py-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          {/* Brand */}
+          <div className="flex flex-col gap-1">
+            <a
+              href="#home"
+              className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-[#00eeff]"
+            >
+              Irfan<span className="text-[#00eeff] drop-shadow-[0_0_8px_rgba(0,238,255,0.6)]">.</span>
             </a>
-            <p className={styles.brandDesc}>
-              Frontend Developer crafting high-performance, pixel-perfect web applications with React.js, Next.js, and TypeScript.
+            <p className="text-xs text-muted-foreground">
+              Frontend Developer specializing in React.js, Next.js &amp; TypeScript.
             </p>
-            <div className={styles.contactInfo}>
-              <span className={styles.contactItem}>
-                <MapPin size={13} className={styles.contactIcon} />
-                Karachi, Pakistan
-              </span>
-              <span className={styles.contactItem}>
-                <Mail size={13} className={styles.contactIcon} />
-                irfanthalvi@gmail.com
-              </span>
-            </div>
-            {/* Tech Chips */}
-            <div className={styles.techChips}>
-              {techStack.map((tech) => (
-                <span key={tech} className={styles.techChip}>{tech}</span>
-              ))}
-            </div>
           </div>
 
-          {/* Nav Column 1 */}
-          <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>Navigate</h4>
-            <ul className={styles.linkList}>
+          {/* Quick Nav Links */}
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-muted-foreground">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className={styles.navLink}>
-                    <span className={styles.linkArrow}>›</span>
+                  <a
+                    href={link.href}
+                    className="transition-colors hover:text-[#00eeff]"
+                  >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Nav Column 2 */}
-          <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>More</h4>
-            <ul className={styles.linkList}>
-              {moreLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className={styles.navLink}>
-                    <span className={styles.linkArrow}>›</span>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social / Connect Column */}
-          <div className={styles.socialCol}>
-            <h4 className={styles.colTitle}>Connect</h4>
-            <div className={styles.socialList}>
+          {/* Social Icons & Back to Top */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               {socialLinks.map((s) => {
                 const Icon = s.icon;
                 return (
@@ -141,41 +82,34 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className={styles.socialRow}
+                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-[#00eeff] hover:-translate-y-0.5"
                   >
-                    <span className={styles.socialIconWrap}>
-                      <Icon size={16} />
-                    </span>
-                    <div className={styles.socialMeta}>
-                      <span className={styles.socialLabel}>{s.label}</span>
-                      <span className={styles.socialHandle}>{s.handle}</span>
-                    </div>
-                    <ExternalLink size={12} className={styles.socialArrow} />
+                    <Icon size={14} />
                   </a>
                 );
               })}
             </div>
+
+            <a
+              href="#home"
+              aria-label="Back to top"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-cyan-500/50 hover:bg-[#00eeff] hover:text-[#060a11] hover:-translate-y-0.5"
+            >
+              <ArrowUp size={14} />
+            </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className={styles.divider} />
-
-        {/* Bottom Bar */}
-        <div className={styles.bottomBar}>
-          <p className={styles.copyright}>
-            &copy; {currentYear} <span className={styles.copyrightName}>Irfan Ali</span>. All rights reserved.
+        {/* Bottom Bar: Copyright */}
+        <div className="mt-6 flex flex-col items-center justify-between border-t border-border/40 pt-4 text-xs text-muted-foreground/80 sm:flex-row">
+          <p>
+            &copy; {currentYear} <span className="font-semibold text-foreground">Irfan Ali</span>. All rights reserved.
           </p>
-          <p className={styles.madeWith}>
-            Built with <Heart size={13} className={styles.heartIcon} /> using{' '}
-            <Code2 size={13} className={styles.codeIcon} /> React &amp; Next.js
+          <p className="mt-2 text-muted-foreground/60 sm:mt-0">
+            Engineered with modern React, Next.js &amp; Tailwind CSS
           </p>
-          <a href="#home" className={styles.backToTop} aria-label="Back to top">
-            <ArrowUp size={16} />
-          </a>
         </div>
       </div>
     </footer>
   );
 }
-
