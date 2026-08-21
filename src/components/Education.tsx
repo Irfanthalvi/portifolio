@@ -34,7 +34,7 @@ interface EducationItem {
 const educationData: EducationItem[] = [
   {
     id: 'fsc',
-    degree: 'FSc — Pre-Engineering (Part I & II)',
+    degree: 'FSc — Computer-Science (Part I & II)',
     institution: 'Islamabad Model College',
     board: 'Federal Board of Intermediate Education (FBISE), Islamabad',
     period: '2020 – 2022',
@@ -42,7 +42,7 @@ const educationData: EducationItem[] = [
     status: 'Completed',
     statusClass: 'completed',
     description:
-      'Completed FSc Pre-Engineering with Distinction from FBISE Islamabad, securing 1st Position in both 11th and 12th Grade and earning multiple merit certificates from the college.',
+      'Completed FSc Computer-Science with Distinction from FBISE Islamabad, securing 1st Position in both 11th and 12th Grade and earning multiple merit certificates from the college.',
     achievements: [
       { icon: Trophy, text: '1st Position — FSc Part I (11th Grade), FBISE Islamabad' },
       { icon: Trophy, text: '1st Position — FSc Part II (12th Grade), FBISE Islamabad' },
@@ -109,8 +109,8 @@ export default function Education() {
                     <h3 className={styles.degree}>{edu.degree}</h3>
                     <span
                       className={`${styles.statusBadge} ${edu.statusClass === 'completed'
-                          ? styles.badgeCompleted
-                          : styles.badgeOngoing
+                        ? styles.badgeCompleted
+                        : styles.badgeOngoing
                         }`}
                     >
                       <span className={styles.pulseDot} />

@@ -1,6 +1,6 @@
 import { ExternalLink, Layers, Code, ShieldCheck, FileText } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
@@ -80,7 +80,7 @@ const projects: Project[] = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-[#080c14] relative">
+    <section id="projects" className="py-20 bg-background relative">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Featured Work"
@@ -93,11 +93,11 @@ export default function Projects() {
           {projects.map((project) => (
             <Card
               key={project.title}
-              className="flex flex-col border-border/80 bg-card/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-500/10"
+              className="flex flex-col border-border/80 bg-card/60 backdrop-blur-md p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
             >
               {/* Header */}
               <div className="flex items-start gap-4 mb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] shrink-0 shadow-[0_0_12px_rgba(0,238,255,0.2)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shrink-0 shadow-[0_0_12px_var(--color-accent-glow)]">
                   {project.icon}
                 </div>
                 <div>
@@ -124,7 +124,7 @@ export default function Projects() {
                   {project.highlights.map((item) => (
                     <li
                       key={item}
-                      className="relative pl-4 text-xs sm:text-sm text-foreground/85 leading-relaxed before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-[#00eeff] before:shadow-[0_0_6px_#00eeff]"
+                      className="relative pl-4 text-xs sm:text-sm text-foreground/85 leading-relaxed before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary before:shadow-[0_0_6px_var(--color-accent-glow)]"
                     >
                       {item}
                     </li>

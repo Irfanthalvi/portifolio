@@ -34,9 +34,24 @@ const config: Config = {
         },
         border: 'hsl(var(--border))',
         ring: 'hsl(var(--ring))',
-        // Portfolio-specific accent kept as custom
+        // Portfolio brand tokens (matching reference teal/cyan palette)
+        brand: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          teal: '#00b39e',
+          cyan: '#00f0d2',
+          glow: 'var(--color-accent)',
+        },
         cyan: {
-          glow: '#00eeff',
+          glow: 'var(--color-accent)',
         },
       },
       fontFamily: {

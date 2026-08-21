@@ -1,7 +1,6 @@
 .section {
   padding: var(--section-padding);
-  background: radial-gradient(circle at 50% 10%, rgba(0, 238, 255, 0.04) 0%, transparent 60%),
-              #080c14;
+  background: var(--color-bg-primary);
   position: relative;
   overflow: hidden;
 }
@@ -24,8 +23,8 @@
 /* Experience Card */
 .card {
   position: relative;
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.75) 0%, rgba(8, 14, 26, 0.85) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   display: flex;
@@ -33,7 +32,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
 
@@ -43,21 +42,20 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.6), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0, 238, 255, 0.4);
-  box-shadow: 0 20px 45px rgba(0, 238, 255, 0.12),
-              0 0 25px rgba(0, 238, 255, 0.06);
+  border-color: var(--color-border-light);
+  box-shadow: 0 20px 45px var(--color-accent-glow),
+              0 0 25px var(--color-accent-subtle);
 }
 
 .card:hover .cardTopGlow {
   opacity: 1;
-  background: linear-gradient(90deg, transparent, #00eeff, transparent);
 }
 
 /* Card Header */
@@ -66,7 +64,7 @@
   flex-direction: column;
   gap: var(--space-4);
   margin-bottom: var(--space-5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
   padding-bottom: var(--space-5);
 }
 
@@ -82,18 +80,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 238, 255, 0.15) 0%, rgba(0, 102, 255, 0.1) 100%);
-  color: #00eeff;
-  border: 1px solid rgba(0, 238, 255, 0.25);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(0, 238, 255, 0.15);
+  box-shadow: 0 0 15px var(--color-accent-glow);
   transition: transform 0.3s ease;
 }
 
 .card:hover .iconWrap {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+  box-shadow: 0 0 20px var(--color-accent-glow);
 }
 
 .companyInfo {
@@ -112,13 +110,13 @@
 .company {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
 }
 
 .role {
   font-size: var(--text-sm);
-  color: #00eeff;
+  color: var(--color-accent);
   font-weight: 600;
   line-height: 1.4;
 }
@@ -138,17 +136,17 @@
 }
 
 .badgeCurrent {
-  color: #34d399;
+  color: #10b981;
   background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.35);
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
 }
 
 .badgeRemote {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+  color: var(--color-accent);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 0 10px var(--color-accent-glow);
 }
 
 .pulseDot {
@@ -184,28 +182,28 @@
   gap: 5px;
   font-size: 0.78rem;
   font-weight: 500;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   padding: 4px 10px;
   border-radius: var(--radius-md);
 }
 
 .typePill {
-  color: #cbd5e1;
-  background: rgba(0, 238, 255, 0.06);
-  border-color: rgba(0, 238, 255, 0.15);
+  color: var(--color-text-primary);
+  background: var(--color-accent-subtle);
+  border-color: var(--color-border-light);
 }
 
 .pillIcon {
-  color: #00eeff;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
 /* Description */
 .description {
   font-size: 0.92rem;
-  color: #cbd5e1;
+  color: var(--color-text-secondary);
   line-height: 1.65;
   margin-bottom: var(--space-5);
 }
@@ -224,12 +222,12 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
 
 .sparkleIcon {
-  color: #00eeff;
+  color: var(--color-accent);
 }
 
 .list {
@@ -243,29 +241,29 @@
   align-items: flex-start;
   gap: 10px;
   font-size: 0.86rem;
-  color: #e2e8f0;
+  color: var(--color-text-secondary);
   line-height: 1.55;
 }
 
 .checkIcon {
-  color: #00eeff;
+  color: var(--color-accent);
   flex-shrink: 0;
   margin-top: 3px;
-  filter: drop-shadow(0 0 4px rgba(0, 238, 255, 0.4));
+  filter: drop-shadow(0 0 4px var(--color-accent-glow));
 }
 
 /* Tech Stack Footer */
 .techStackWrap {
   margin-top: auto;
   padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .techLabel {
   display: block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: var(--space-2);
@@ -280,17 +278,17 @@
 .techChip {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #e2e8f0;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(0, 238, 255, 0.2);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   padding: 3px 9px;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
 }
 
 .techChip:hover {
-  background: rgba(0, 238, 255, 0.15);
-  border-color: #00eeff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: #ffffff;
   transform: translateY(-1px);
 }
@@ -313,4 +311,3 @@
     align-items: flex-start;
   }
 }
-

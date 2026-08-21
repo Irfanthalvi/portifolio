@@ -16,13 +16,17 @@ const badgeVariants = cva(
         outline:
           'border-border text-foreground',
         cyan:
-          'border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] hover:bg-cyan-500/20',
+          'border-primary/30 bg-primary/10 text-primary hover:bg-primary/20',
+        brand:
+          'border-primary/30 bg-primary/10 text-primary hover:bg-primary/20',
+        sky:
+          'border-cyan-500/30 bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20',
         success:
           'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
         warning:
           'border-amber-500/30 bg-amber-500/10 text-amber-400',
         tech:
-          'border-border/60 bg-muted/30 text-muted-foreground hover:text-foreground hover:border-cyan-glow/40 hover:bg-cyan-glow/5',
+          'border-border/60 bg-muted/40 text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-primary/5',
       },
     },
     defaultVariants: {

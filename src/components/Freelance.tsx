@@ -24,7 +24,7 @@ const clientFeedback = [
 
 export default function Freelance() {
   return (
-    <section id="freelance" className="py-20 bg-[#080c14] relative">
+    <section id="freelance" className="py-20 bg-background relative">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="Freelance"
@@ -51,7 +51,7 @@ export default function Freelance() {
                   key={area}
                   className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground/80 font-medium"
                 >
-                  <CheckCircle size={16} className="text-[#00eeff] shrink-0" />
+                  <CheckCircle size={16} className="text-primary shrink-0" />
                   <span>{area}</span>
                 </div>
               ))}

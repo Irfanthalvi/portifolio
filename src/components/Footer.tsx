@@ -45,9 +45,9 @@ export default function Footer() {
           <div className="flex flex-col gap-1">
             <a
               href="#home"
-              className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-[#00eeff]"
+              className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
             >
-              Irfan<span className="text-[#00eeff] drop-shadow-[0_0_8px_rgba(0,238,255,0.6)]">.</span>
+              Irfan<span className="text-primary drop-shadow-[0_0_8px_var(--color-accent-glow)]">.</span>
             </a>
             <p className="text-xs text-muted-foreground">
               Frontend Developer specializing in React.js, Next.js &amp; TypeScript.
@@ -61,7 +61,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="transition-colors hover:text-[#00eeff]"
+                    className="transition-colors hover:text-primary"
                   >
                     {link.label}
                   </a>
@@ -82,7 +82,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-[#00eeff] hover:-translate-y-0.5"
+                    className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:-translate-y-0.5"
                   >
                     <Icon size={14} />
                   </a>
@@ -93,7 +93,7 @@ export default function Footer() {
             <a
               href="#home"
               aria-label="Back to top"
-              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-cyan-500/50 hover:bg-[#00eeff] hover:text-[#060a11] hover:-translate-y-0.5"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-border/60 bg-card/60 text-muted-foreground transition-all duration-200 hover:border-primary/50 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5"
             >
               <ArrowUp size={14} />
             </a>

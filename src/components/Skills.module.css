@@ -1,7 +1,6 @@
 .section {
   padding: var(--section-padding);
-  background: radial-gradient(circle at 50% 20%, rgba(0, 238, 255, 0.04) 0%, transparent 60%),
-              #080c14;
+  background: var(--color-bg-primary);
   position: relative;
   overflow: hidden;
 }
@@ -28,9 +27,9 @@
   gap: 8px;
   padding: 10px 18px;
   border-radius: var(--radius-full);
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #94a3b8;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
   font-size: var(--text-sm);
   font-weight: 600;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -38,17 +37,17 @@
 }
 
 .filterBtn:hover {
-  color: #ffffff;
-  border-color: rgba(0, 238, 255, 0.4);
-  background: rgba(15, 23, 42, 0.85);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-light);
+  background: var(--color-bg-surface);
   transform: translateY(-2px);
 }
 
 .activeFilter {
-  color: #080c14 !important;
-  background: linear-gradient(135deg, #00eeff 0%, #38bdf8 100%) !important;
-  border-color: #00eeff !important;
-  box-shadow: 0 0 20px rgba(0, 238, 255, 0.35);
+  color: #ffffff !important;
+  background: linear-gradient(135deg, var(--color-accent-dark) 0%, var(--color-accent) 100%) !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 20px var(--color-accent-glow);
   transform: translateY(-2px);
 }
 
@@ -56,14 +55,14 @@
   font-size: 0.72rem;
   padding: 2px 7px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: inherit;
   font-weight: 700;
 }
 
 .activeFilter .tabBadge {
-  background: rgba(8, 12, 20, 0.25);
-  color: #080c14;
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
 }
 
 /* Skills Grid */
@@ -77,8 +76,8 @@
 /* Skill Card */
 .skillCard {
   position: relative;
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.7) 0%, rgba(8, 14, 26, 0.8) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   display: flex;
@@ -86,14 +85,14 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .skillCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 238, 255, 0.35);
-  box-shadow: 0 16px 36px rgba(0, 238, 255, 0.12),
-              0 0 15px rgba(0, 238, 255, 0.05);
+  border-color: var(--color-border-light);
+  box-shadow: 0 16px 36px var(--color-accent-glow),
+              0 0 15px var(--color-accent-subtle);
 }
 
 .cardHeader {
@@ -117,7 +116,7 @@
 }
 
 .categoryIcon {
-  color: #00eeff;
+  color: var(--color-accent);
 }
 
 .categoryBadge {
@@ -125,13 +124,13 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #64748b;
+  color: var(--color-text-muted);
 }
 
 .skillName {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
 }
 
@@ -147,15 +146,15 @@
 }
 
 .levelExpert {
-  color: #00eeff;
-  background: rgba(0, 238, 255, 0.1);
-  border: 1px solid rgba(0, 238, 255, 0.3);
+  color: var(--color-accent);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-light);
 }
 
 .levelAdvanced {
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--color-accent-light);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-light);
 }
 
 .levelProficient {
@@ -178,12 +177,12 @@
 }
 
 .proficiencyLabel {
-  color: #94a3b8;
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
 .percentText {
-  color: #00eeff;
+  color: var(--color-accent);
   font-weight: 700;
   font-family: var(--font-mono);
 }
@@ -191,16 +190,16 @@
 .progressBarTrack {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-border);
   border-radius: 999px;
   overflow: hidden;
 }
 
 .progressBarFill {
   height: 100%;
-  background: linear-gradient(90deg, #0099ff, #00eeff);
+  background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent));
   border-radius: 999px;
-  box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+  box-shadow: 0 0 10px var(--color-accent-glow);
   transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -211,14 +210,14 @@
   gap: 6px;
   margin-top: auto;
   padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-border);
 }
 
 .tag {
   font-size: 0.72rem;
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-text-secondary);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border);
   padding: 3px 8px;
   border-radius: var(--radius-sm);
 }
@@ -227,7 +226,7 @@
 .bentoSection {
   margin-top: var(--space-8);
   padding-top: var(--space-10);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .bentoHeader {
@@ -239,13 +238,13 @@
 }
 
 .bentoSparkle {
-  color: #00eeff;
+  color: var(--color-accent);
 }
 
 .bentoTitle {
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-text-primary);
   letter-spacing: -0.02em;
 }
 
@@ -256,8 +255,8 @@
 }
 
 .bentoCard {
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.6) 0%, rgba(8, 12, 22, 0.7) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   display: flex;
@@ -268,8 +267,8 @@
 
 .bentoCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 238, 255, 0.3);
-  box-shadow: 0 12px 30px rgba(0, 238, 255, 0.1);
+  border-color: var(--color-border-light);
+  box-shadow: 0 12px 30px var(--color-accent-glow);
 }
 
 .bentoIconWrap {
@@ -278,25 +277,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 238, 255, 0.15) 0%, rgba(0, 102, 255, 0.08) 100%);
-  color: #00eeff;
-  border: 1px solid rgba(0, 238, 255, 0.2);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-4);
-  box-shadow: 0 0 15px rgba(0, 238, 255, 0.1);
+  box-shadow: 0 0 15px var(--color-accent-glow);
 }
 
 .bentoCardTitle {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-primary);
   margin-bottom: var(--space-2);
   line-height: 1.35;
 }
 
 .bentoCardDesc {
   font-size: 0.84rem;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -325,4 +324,3 @@
     font-size: var(--text-xs);
   }
 }
-

@@ -9,11 +9,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-primary text-primary-foreground font-semibold shadow-lg shadow-cyan-glow/20 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
+          'bg-primary text-primary-foreground font-semibold shadow-lg shadow-primary/25 hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
         destructive:
           'bg-red-500 text-white hover:bg-red-600',
         outline:
-          'border border-border bg-transparent hover:bg-muted/50 hover:text-foreground hover:border-cyan-glow/40',
+          'border border-border bg-transparent hover:bg-muted/50 hover:text-foreground hover:border-primary/50',
         secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost:
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         link:
           'text-primary underline-offset-4 hover:underline',
         glow:
-          'bg-gradient-to-r from-[#00eeff] to-[#38bdf8] text-[#060a11] font-bold shadow-[0_0_20px_rgba(0,238,255,0.35)] hover:shadow-[0_0_30px_rgba(0,238,255,0.55)] hover:-translate-y-0.5 transition-all',
+          'bg-gradient-to-r from-teal-600 via-teal-500 to-cyan-500 text-white font-bold shadow-[0_4px_20px_var(--color-accent-glow)] hover:shadow-[0_6px_28px_var(--color-accent-glow)] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 transition-all',
       },
       size: {
         default: 'h-10 px-4 py-2',

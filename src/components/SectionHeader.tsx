@@ -19,7 +19,7 @@ export default function SectionHeader({
     <div className={`mb-12 text-center ${className}`}>
       {label && (
         <Badge
-          variant="cyan"
+          variant="brand"
           className="mb-3 px-4 py-1 text-xs uppercase tracking-widest font-bold"
         >
           {label}
@@ -28,7 +28,7 @@ export default function SectionHeader({
       <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl leading-tight">
         {title}{' '}
         {highlight && (
-          <span className="text-[#00eeff] drop-shadow-[0_0_16px_rgba(0,238,255,0.45)]">
+          <span className="bg-gradient-to-r from-teal-500 via-cyan-400 to-teal-400 bg-clip-text text-transparent font-extrabold">
             {highlight}
           </span>
         )}
@@ -38,7 +38,7 @@ export default function SectionHeader({
           {subtitle}
         </p>
       )}
-      <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-[#00eeff] to-[#0066ff] shadow-[0_0_10px_rgba(0,238,255,0.6)]" />
+      <div className="mx-auto mt-4 h-1 w-14 rounded-full bg-gradient-to-r from-teal-500 via-cyan-400 to-emerald-500 shadow-[0_0_12px_var(--color-accent-glow)]" />
     </div>
   );
 }

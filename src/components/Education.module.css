@@ -1,7 +1,6 @@
 .section {
   padding: var(--section-padding);
-  background: radial-gradient(circle at 50% 10%, rgba(0, 238, 255, 0.03) 0%, transparent 60%),
-              #080c14;
+  background: var(--color-bg-primary);
   position: relative;
   overflow: hidden;
 }
@@ -24,8 +23,8 @@
 /* Card */
 .card {
   position: relative;
-  background: linear-gradient(145deg, rgba(15, 23, 42, 0.75) 0%, rgba(8, 14, 26, 0.85) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   display: flex;
@@ -33,7 +32,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -43,20 +42,19 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 238, 255, 0.35);
-  box-shadow: 0 20px 45px rgba(0, 238, 255, 0.1), 0 0 25px rgba(0, 238, 255, 0.05);
+  border-color: var(--color-border-light);
+  box-shadow: 0 20px 45px var(--color-accent-glow), 0 0 25px var(--color-accent-subtle);
 }
 
 .card:hover .cardGlow {
   opacity: 1;
-  background: linear-gradient(90deg, transparent, #00eeff, transparent);
 }
 
 /* Card Header */
@@ -66,7 +64,7 @@
   gap: var(--space-4);
   margin-bottom: var(--space-5);
   padding-bottom: var(--space-5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .iconWrap {
@@ -75,18 +73,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 238, 255, 0.15) 0%, rgba(0, 102, 255, 0.08) 100%);
-  color: #00eeff;
-  border: 1px solid rgba(0, 238, 255, 0.25);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   flex-shrink: 0;
-  box-shadow: 0 0 15px rgba(0, 238, 255, 0.15);
+  box-shadow: 0 0 15px var(--color-accent-glow);
   transition: transform 0.3s ease;
 }
 
 .card:hover .iconWrap {
   transform: scale(1.05);
-  box-shadow: 0 0 22px rgba(0, 238, 255, 0.3);
+  box-shadow: 0 0 22px var(--color-accent-glow);
 }
 
 .headerContent {
@@ -106,7 +104,7 @@
 .degree {
   font-size: 1.15rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
   line-height: 1.35;
   flex: 1;
@@ -115,13 +113,13 @@
 .institution {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: #00eeff;
+  color: var(--color-accent);
   margin-bottom: 3px;
 }
 
 .board {
   font-size: 0.78rem;
-  color: #64748b;
+  color: var(--color-text-muted);
   font-weight: 500;
   margin-bottom: var(--space-3);
   line-height: 1.4;
@@ -142,7 +140,7 @@
 }
 
 .badgeCompleted {
-  color: #34d399;
+  color: #10b981;
   background: rgba(16, 185, 129, 0.1);
   border: 1px solid rgba(16, 185, 129, 0.3);
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.12);
@@ -182,15 +180,15 @@
   gap: 5px;
   font-size: 0.76rem;
   font-weight: 500;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--color-text-muted);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   padding: 3px 9px;
   border-radius: var(--radius-md);
 }
 
 .pillIcon {
-  color: #00eeff;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -200,21 +198,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(0, 238, 255, 0.1) 0%, rgba(0, 102, 255, 0.06) 100%);
-  border: 1px solid rgba(0, 238, 255, 0.25);
+  background: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-4) var(--space-5);
   min-width: 90px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 238, 255, 0.08);
+  box-shadow: 0 0 20px var(--color-accent-glow);
   flex-shrink: 0;
 }
 
 .scoreValue {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #00eeff;
-  text-shadow: 0 0 12px rgba(0, 238, 255, 0.5);
+  color: var(--color-accent);
+  text-shadow: 0 0 12px var(--color-accent-glow);
   letter-spacing: 0;
   line-height: 1.2;
   text-align: center;
@@ -223,7 +221,7 @@
 .scoreLabel {
   font-size: 0.65rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-top: 5px;
@@ -232,7 +230,7 @@
 /* Description */
 .description {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: var(--color-text-secondary);
   line-height: 1.65;
   margin-bottom: var(--space-5);
 }
@@ -250,7 +248,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
 
@@ -269,7 +267,7 @@
   align-items: flex-start;
   gap: 9px;
   font-size: 0.84rem;
-  color: #e2e8f0;
+  color: var(--color-text-secondary);
   line-height: 1.5;
 }
 
@@ -281,14 +279,14 @@
 }
 
 .achieveIcon[data-award] {
-  color: #00eeff;
+  color: var(--color-accent);
 }
 
 /* Certificates */
 .certificatesWrap {
   margin-top: auto;
   padding-top: var(--space-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--color-border);
 }
 
 .certTitle {
@@ -299,12 +297,12 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: var(--color-text-muted);
   margin-bottom: var(--space-3);
 }
 
 .certIcon {
-  color: #00eeff;
+  color: var(--color-accent);
 }
 
 .certChips {
@@ -316,17 +314,17 @@
 .certChip {
   font-size: 0.74rem;
   font-weight: 600;
-  color: #e2e8f0;
-  background: rgba(0, 238, 255, 0.06);
-  border: 1px solid rgba(0, 238, 255, 0.18);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
 }
 
 .certChip:hover {
-  background: rgba(0, 238, 255, 0.14);
-  border-color: #00eeff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: #ffffff;
 }
 
@@ -358,4 +356,3 @@
     align-items: flex-start;
   }
 }
-

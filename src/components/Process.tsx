@@ -41,7 +41,7 @@ const steps: Step[] = [
 
 export default function Process() {
   return (
-    <section className="py-20 bg-[#060a11] relative">
+    <section className="py-20 bg-background relative">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="How I Work"
@@ -53,12 +53,12 @@ export default function Process() {
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="relative flex flex-col items-center text-center p-6 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-1"
+              className="relative flex flex-col items-center text-center p-6 rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:-translate-y-1"
             >
-              <div className="mb-3 text-xs font-black tracking-widest text-[#00eeff] uppercase">
+              <div className="mb-3 text-xs font-black tracking-widest text-primary uppercase">
                 {step.number}
               </div>
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff] shadow-[0_0_12px_rgba(0,238,255,0.2)]">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-primary shadow-[0_0_12px_var(--color-accent-glow)]">
                 {step.icon}
               </div>
               <h3 className="mb-2 text-base font-bold text-foreground">
@@ -69,7 +69,7 @@ export default function Process() {
               </p>
               {index < steps.length - 1 && (
                 <div
-                  className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[2px] bg-gradient-to-r from-cyan-500/60 to-transparent -translate-y-1/2"
+                  className="hidden lg:block absolute top-1/2 -right-3 w-6 h-[2px] bg-gradient-to-r from-primary/60 to-transparent -translate-y-1/2"
                   aria-hidden="true"
                 />
               )}

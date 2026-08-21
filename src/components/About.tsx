@@ -44,7 +44,7 @@ const highlights = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#080c14] relative">
+    <section id="about" className="py-20 bg-background relative">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeader
           label="About Me"
@@ -57,11 +57,11 @@ export default function About() {
           {/* Left: Bio & Tech Chips */}
           <div className="flex flex-col gap-5 text-left">
             <p className="text-base sm:text-lg text-foreground/90 leading-relaxed">
-              I&apos;m <strong className="text-[#00eeff] font-bold">Irfan Ali</strong>, a Frontend Developer with{' '}
-              <strong className="text-[#00eeff] font-bold">3+ years of experience</strong> building modern, scalable, and
-              production-ready web applications using <strong className="text-[#00eeff] font-bold">React.js</strong>,{' '}
-              <strong className="text-[#00eeff] font-bold">Next.js</strong>, and{' '}
-              <strong className="text-[#00eeff] font-bold">TypeScript</strong>.
+              I&apos;m <strong className="text-primary font-bold">Irfan Ali</strong>, a Frontend Developer with{' '}
+              <strong className="text-primary font-bold">3+ years of experience</strong> building modern, scalable, and
+              production-ready web applications using <strong className="text-primary font-bold">React.js</strong>,{' '}
+              <strong className="text-primary font-bold">Next.js</strong>, and{' '}
+              <strong className="text-primary font-bold">TypeScript</strong>.
             </p>
 
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
@@ -85,7 +85,7 @@ export default function About() {
               {skills.map((tech) => (
                 <Badge
                   key={tech}
-                  variant="cyan"
+                  variant="brand"
                   className="px-3.5 py-1 text-xs font-semibold rounded-full hover:scale-105 transition-transform"
                 >
                   {tech}
@@ -101,10 +101,10 @@ export default function About() {
               return (
                 <Card
                   key={item.title}
-                  className="border-border/60 bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10"
+                  className="border-border/60 bg-card/60 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
                 >
                   <CardHeader className="p-6">
-                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-[#00eeff]">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-[0_0_10px_var(--color-accent-glow)]">
                       <IconComp size={22} />
                     </div>
                     <CardTitle className="text-base font-bold text-foreground mb-2">

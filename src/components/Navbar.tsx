@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const navLinks = [
@@ -19,6 +19,32 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +73,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-background/90 backdrop-blur-xl border-b border-border/80 shadow-lg shadow-black/40 py-3'
+          ? 'bg-background/90 backdrop-blur-xl border-b border-border/80 shadow-lg shadow-black/10 dark:shadow-black/40 py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -55,10 +81,10 @@ export default function Navbar() {
         {/* Brand Logo */}
         <a
           href="#home"
-          className="text-2xl font-black tracking-tight text-foreground transition-colors hover:text-[#00eeff]"
+          className="text-2xl font-black tracking-tight text-foreground transition-colors hover:text-primary"
         >
           Irfan
-          <span className="text-[#00eeff] drop-shadow-[0_0_12px_#00eeff]">.</span>
+          <span className="text-primary drop-shadow-[0_0_12px_var(--color-accent-glow)]">.</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -67,7 +93,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors rounded-md hover:text-[#00eeff] hover:bg-cyan-500/10"
+                className="px-3 py-1.5 text-sm font-semibold text-muted-foreground transition-colors rounded-md hover:text-primary hover:bg-primary/10"
               >
                 {link.label}
               </a>
@@ -75,8 +101,22 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden lg:block">
+        {/* Desktop Theme Toggle & CTA */}
+        <div className="hidden lg:flex items-center gap-3">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-card/60 text-foreground transition-all duration-200 hover:border-primary/50 hover:bg-primary/10 hover:text-primary hover:scale-105"
+            >
+              {isDark ? (
+                <Sun size={18} className="text-primary drop-shadow-[0_0_8px_var(--color-accent-glow)]" />
+              ) : (
+                <Moon size={18} className="text-foreground" />
+              )}
+            </button>
+          )}
+
           <Button
             asChild
             variant="glow"
@@ -87,15 +127,31 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden p-2 text-foreground rounded-md transition-colors hover:text-[#00eeff]"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Actions: Theme Toggle + Menu Toggle */}
+        <div className="flex lg:hidden items-center gap-2">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              aria-label={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className="p-2 text-foreground rounded-md transition-colors hover:text-primary"
+            >
+              {isDark ? (
+                <Sun size={20} className="text-primary" />
+              ) : (
+                <Moon size={20} className="text-foreground" />
+              )}
+            </button>
+          )}
+
+          <button
+            className="p-2 text-foreground rounded-md transition-colors hover:text-primary"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
 
         {/* Mobile Menu Overlay */}
         <div
@@ -110,7 +166,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="block text-lg font-semibold text-muted-foreground px-4 py-3 rounded-lg transition-colors hover:text-[#00eeff] hover:bg-cyan-500/10"
+                  className="block text-lg font-semibold text-muted-foreground px-4 py-3 rounded-lg transition-colors hover:text-primary hover:bg-primary/10"
                   onClick={handleLinkClick}
                 >
                   {link.label}
