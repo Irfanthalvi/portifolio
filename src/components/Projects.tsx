@@ -29,7 +29,7 @@ const projects: Project[] = [
     technologies: ['React.js', 'Next.js', 'TypeScript', 'Firebase', 'OTP Verification', 'Tailwind CSS'],
     icon: <Layers size={22} />,
     linkLabel: 'Lms-dev',
-    projectUrl: '#',
+    projectUrl: 'https://shadcn-lms-dev-afif.vercel.app/',
   },
   {
     title: 'Product Selling / E-Commerce Platform',
@@ -44,7 +44,7 @@ const projects: Project[] = [
     technologies: ['React.js', 'Firebase Auth', 'Three.js', 'Admin OTP', 'Material UI'],
     icon: <ShieldCheck size={22} />,
     linkLabel: 'Ice-Pops',
-    projectUrl: '#',
+    projectUrl: 'https://lush-crush.vercel.app/',
   },
   {
     title: 'Production & Interactive 3D Web Projects',
@@ -59,7 +59,7 @@ const projects: Project[] = [
     technologies: ['Next.js', 'React', 'Three.js', 'GSAP', 'Lenis', 'Tailwind CSS'],
     icon: <Code size={22} />,
     linkLabel: 'Landing-page',
-    projectUrl: '#',
+    projectUrl: 'https://ai-lms-ashy.vercel.app/',
   },
   {
     title: 'Invoice & SaaS Dashboard Systems',
@@ -74,7 +74,7 @@ const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'REST APIs', 'React Query', 'PDF Engine', 'shadcn/ui'],
     icon: <FileText size={22} />,
     linkLabel: 'Invoices',
-    projectUrl: '#',
+    projectUrl: 'https://invoice-form-three.vercel.app/',
   },
 ];
 
